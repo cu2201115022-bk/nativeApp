@@ -27,8 +27,8 @@ struct MainTab: View{
 
             TabDView()
                 .tabItem {
-                    Image(selectedTab == 3 ? "icon_tab_d" : "icon_default")
-                    Text("設定")
+                    Image(OtherTab == 3 ? "icon_tab_d" : "icon_default")
+                    Text("ツール")
                 }
                 .tag(3)
         }
