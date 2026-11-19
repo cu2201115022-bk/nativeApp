@@ -1,23 +1,36 @@
 import SwiftUI
 
 struct MainTab: View{
-    @state private var selectedTab: Int = 0
+    @State private var selectedTab: Int = 0
     var body: some View{
         TabView(selection: $selectedTab){
-            Tab("運行", image: "car")    }
+            TabAView()
+                .tabItem {
+                    Image(selectedTab == 0 ? "icon_tab_a" : "icon_default")
+                    Text("運行")
+                }
                 .tag(0)
-            SearchView()
-                .tabItem{
-                    Image(systemName: "magnifyingglass")
-                    Text("Search")
+
+            TabBView()
+                .tabItem {
+                    Image(selectedTab == 1 ? "icon_tab_b" : "icon_default")
+                    Text("囃子")
                 }
                 .tag(1)
-            ProfileView()
-                .tabItem{
-                    Image(systemName: "person")
-                    Text("Profile")
+
+            TabCView()
+                .tabItem {
+                    Image(selectedTab == 2 ? "icon_tab_c" : "icon_default")
+                    Text("連絡")
                 }
                 .tag(2)
+
+            TabDView()
+                .tabItem {
+                    Image(selectedTab == 3 ? "icon_tab_d" : "icon_default")
+                    Text("設定")
+                }
+                .tag(3)
         }
     }
 }
